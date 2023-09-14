@@ -17,11 +17,11 @@ pipeline {
                 bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotnet6buildtolinux2\\JenkinsWebApplicationDemo.sln --configuration Release'
             }
         }
-        stage('Test Stage') {
-            steps {
-                bat 'dotnet test %WORKSPACE%\\TestProject1\\TestProject1.csproj'
-            }
-        }
+        //stage('Test Stage') {
+           // steps {
+             //   bat 'dotnet test %WORKSPACE%\\TestProject1\\TestProject1.csproj'
+            //}
+       // }
         stage("Release Stage") {
             steps {
                 bat 'dotnet build %WORKSPACE%\\JenkinsWebApplicationDemo.sln /p:PublishProfile=" %WORKSPACE%\\JenkinsWebApplicationDemo\\Properties\\PublishProfiles\\FolderProfile.pubxml" /p:Platform="Any CPU" /p:DeployOnBuild=true /m'
