@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Build Stage') {
             steps {
-                bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TestPipeline\\JenkinsWebApplicationDemo.sln --configuration Release'
+                //bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TestPipeline\\JenkinsWebApplicationDemo.sln --configuration Release'
+                bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotnet6buildtolinux2\\JenkinsWebApplicationDemo.sln --configuration Release'
             }
         }
         stage('Test Stage') {
