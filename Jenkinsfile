@@ -25,9 +25,6 @@ pipeline {
                         workspaceDir = sh(script: 'pwd', returnStdout: true).toString().trim()
                     } else {
                         workspaceDir = bat(script: 'echo %cd%', returnStatus: true).toString().trim()
-                        echo workspaceDir
-                        echo %cd%
-                        (cd)
                     }
 
                     // Run the .NET Core 6 build command using the full path to 'dotnet'
