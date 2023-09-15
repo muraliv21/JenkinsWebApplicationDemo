@@ -22,9 +22,9 @@ pipeline {
                 script {
                     def workspaceDir
                     if (isUnix()) {
-                        workspaceDir = sh(script: 'pwd', returnStdout: true).trim()
+                        workspaceDir = sh(script: 'pwd', returnStdout: true).toString().trim()
                     } else {
-                        workspaceDir = bat(script: 'echo %WORKSPACE%', returnStatus: true).trim()
+                        workspaceDir = bat(script: 'echo %WORKSPACE%', returnStatus: true).toString().trim()
                     }
 
                     // Run the .NET Core 6 build command using the full path to 'dotnet'
