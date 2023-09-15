@@ -1,6 +1,11 @@
 pipeline {
     agent any
-    
+
+    environment {
+        // Declare variables in the environment block
+        DOTNET_PATH = "C:\\Program Files\\dotnet\\dotnet.exe"  // Update with the actual path
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -23,9 +28,10 @@ pipeline {
                     }
 
                     // Run the .NET Core 6 build command using the full path to 'dotnet'
-                    def dotnetPath = "C:\\Program Files\\dotnet\\dotnet.exe"  // Update with the actual path
+                   // def dotnetPath = "C:\\Program Files\\dotnet\\dotnet.exe"  // Update with the actual path
                     bat "cd ${workspaceDir}"
-                    bat "\"${dotnetPath}\" build -c Release"
+                 //   bat "\"${dotnetPath}\" build -c Release"
+                     bat "\"${DOTNET_PATH}\" build -c Release"
                 }
             }
         }
