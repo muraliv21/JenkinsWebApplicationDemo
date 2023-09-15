@@ -27,7 +27,6 @@ pipeline {
                         workspaceDir = bat(script: 'echo %cd%', returnStatus: true).toString().trim()
                         echo workspaceDir
                         echo %cd%
-                        echo %^cd%
                         (cd)
                    // }
 
