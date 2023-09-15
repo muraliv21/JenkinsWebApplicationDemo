@@ -24,7 +24,7 @@ pipeline {
                    // if (isUnix()) {
                      //   workspaceDir = sh(script: 'pwd', returnStdout: true).toString().trim()
                    // } else {
-                        workspaceDir = bat(script: 'echo %cd%', returnStatus: true).toString().trim()
+                        workspaceDir = bat(script: 'echo %cd%', returnStatus: false).toString().trim()
                    // }
 
                     // Run the .NET Core 6 build command using the full path to 'dotnet'
