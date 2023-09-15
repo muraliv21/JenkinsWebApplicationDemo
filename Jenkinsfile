@@ -24,7 +24,7 @@ pipeline {
                     if (isUnix()) {
                         workspaceDir = sh(script: 'pwd', returnStdout: true).toString().trim()
                     } else {
-                        workspaceDir = bat(script: 'echo %cd%', returnStatus: true).toString().trim()
+                        workspaceDir = bat(script: 'echo %^cd%', returnStatus: true).toString().trim()
                         echo workspaceDir
                     }
 
